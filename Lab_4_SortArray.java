@@ -1,22 +1,31 @@
-class LAB3
+import java.util.Scanner;
+class LAB4
 {
-	public static void main(String args[])
-	{
-		int i,j,count;
-		for (i=1;i<100;i++)
+	public static void main(String[] args) {
+		int i,j,c;
+		int[] arr;
+		Scanner input = new Scanner (System.in);
+		arr = new int[5];
+		System.out.println("Enter Elements of Array");
+		for (i=0;i<arr.length;i++)
+				arr[i] = input.nextInt();
+		System.out.println("**** Elements of Array ****");
+		for (i=0;i<arr.length;i++)
+				System.out.println(arr[i]);
+		for (i=0;i<arr.length;i++)
 		{
-			count = 0;
-			for (j=1;j<= i;j++)
+			for (j=i+1;j<arr.length;j++)
 			{
-				if (i%j==0)
+				if (arr[i]>arr[j])
 				{
-					count=count+1;
+					c = arr[i];
+					arr[i]= arr[j];
+					arr[j]= c;
 				}
 			}
-			if (count==2)
-			{
-				System.out.println(i);
-			}	
 		}
+		System.out.println("After Sorting the Array");
+		for (i=0;i<arr.length;i++)
+				System.out.println(arr[i]);
 	}
 }
